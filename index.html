@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="SpaceAura provides premium full-home interiors, modular kitchens, wardrobes and renovation services across India.">
+<title>SpaceAura | Premium Interior Design Across India</title>
+<link rel="preconnect" href="https://images.unsplash.com">
+<style>
+:root{
+  --bg:#0d0c0b; --bg2:#12100f; --card:#181512; --card2:#211c17;
+  --text:#f3eee6; --muted:#aaa095; --line:#302820;
+  --gold:#c79b60; --gold2:#e1bf83; --accent:#8b6036;
+  --r:24px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 80% 0%,rgba(199,155,96,.11),transparent 30%),var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.55}
+img{display:block;width:100%} a{text-decoration:none;color:inherit}
+.wrap{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(13,12,11,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center}.logo img{width:300px;max-width:46vw;height:auto}
+.navlinks{display:flex;gap:24px;font-size:.92rem;font-weight:700;color:#d8d0c7}
+.menu-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.03);color:var(--text);align-items:center;justify-content:center;cursor:pointer;padding:0}
+.menu-toggle span,.menu-toggle span:before,.menu-toggle span:after{content:"";display:block;width:20px;height:2px;background:currentColor;border-radius:99px;position:relative;transition:.25s}
+.menu-toggle span:before{position:absolute;top:-6px}.menu-toggle span:after{position:absolute;top:6px}
+.menu-toggle.active span{background:transparent}.menu-toggle.active span:before{top:0;transform:rotate(45deg)}.menu-toggle.active span:after{top:0;transform:rotate(-45deg)}
+.mobile-menu{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;border-radius:999px;font-weight:800;border:1px solid var(--line);transition:.25s}
+.btn:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#15110d;border:none;box-shadow:0 12px 34px rgba(199,155,96,.18)}
+.ghost{background:rgba(255,255,255,.03)}
+.hero{padding:44px 0 80px}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.eyebrow{font-size:.73rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold2);font-weight:800}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;margin:0;line-height:1.05;font-weight:500}
+h1{font-size:clamp(3rem,6.4vw,6.2rem);letter-spacing:-.035em}
+h2{font-size:clamp(2rem,4vw,3.9rem)} p{color:var(--muted)}
+.hero p{font-size:1.08rem;max-width:620px;margin:22px 0 28px}.actions{display:flex;gap:12px;flex-wrap:wrap}
+.proof{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px}.proof strong{display:block;color:#fff}.proof span{font-size:.82rem;color:#8f857b}
+.hero-media{padding:10px;border:1px solid rgba(255,255,255,.07);border-radius:32px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.01))}
+.hero-media img{height:650px;object-fit:cover;border-radius:24px;filter:saturate(.88) contrast(1.04);box-shadow:0 25px 70px rgba(0,0,0,.36)}
+section{padding:92px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:34px}.section-head p{max-width:540px;margin:0}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service{background:linear-gradient(180deg,var(--card),#141210);border:1px solid var(--line);border-radius:var(--r);padding:26px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between}
+.service b{color:var(--gold2);font-size:.8rem}.service h3{font-size:1.45rem;margin-top:22px}.service p{font-size:.92rem;margin-bottom:0}
+.gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:300px 300px;gap:16px}.gallery figure{margin:0;overflow:hidden;border-radius:22px;border:1px solid var(--line)}
+.gallery img{height:100%;object-fit:cover;transition:.4s;filter:saturate(.9)}.gallery figure:hover img{transform:scale(1.035)}.gallery .big{grid-row:1/3}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{padding-top:22px;border-top:1px solid #43372c}.step b{color:var(--gold2)}.step h3{font-family:Arial,sans-serif;font-size:1.05rem;margin:12px 0 4px}
+.statement{background:linear-gradient(135deg,rgba(225,191,131,.11),transparent 45%),linear-gradient(180deg,#1a1714,#12100f);border:1px solid var(--line);border-radius:32px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.ticks{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tick{padding:14px 15px;border:1px solid #3a3027;border-radius:13px;color:#ddd4ca;background:rgba(255,255,255,.02)}
+.cta{text-align:center;padding:68px 28px;border-radius:34px;border:1px solid #3a3027;background:radial-gradient(circle at 50% -20%,rgba(225,191,131,.25),transparent 43%),#171411}.cta p{max-width:670px;margin:16px auto 26px}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px}.form{background:linear-gradient(180deg,#1a1714,#12100f);border:1px solid var(--line);border-radius:24px;padding:28px}
+.field{display:grid;gap:7px;margin-bottom:14px}label{font-size:.82rem;font-weight:800}
+input,select,textarea{width:100%;padding:14px 15px;border-radius:12px;border:1px solid #3a3027;background:#0f0d0c;color:var(--text);font:inherit}textarea{min-height:110px;resize:vertical}
+footer{margin-top:56px;border-top:1px solid var(--line);padding:34px 0 105px}.footer{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#8f857b;font-size:.9rem}
+.mobilebar{display:none}
+@media(max-width:900px){
+ .navlinks,.nav>.primary{display:none}.menu-toggle{display:inline-flex}.nav{position:relative}.mobile-menu{position:absolute;top:calc(100% + 10px);left:0;right:0;margin:auto;width:min(92%,560px);background:rgba(18,16,15,.98);border:1px solid var(--line);border-radius:20px;padding:10px;box-shadow:0 24px 70px rgba(0,0,0,.42);backdrop-filter:blur(18px)}.mobile-menu.open{display:block}.mobile-menu a{display:block;padding:14px 16px;border-radius:12px;font-weight:800;color:#e8dfd5}.mobile-menu a:hover,.mobile-menu a:focus{background:rgba(255,255,255,.05)}.mobile-menu .mobile-cta{margin-top:6px;text-align:center;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#15110d}
+ .hero-grid{grid-template-columns:1fr}.hero-media img{height:500px}
+ .services,.process{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:360px 220px 220px}.gallery .big{grid-column:1/3;grid-row:auto}
+ .statement,.contact{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ .logo img{width:220px;max-width:68vw}.nav{min-height:72px}
+ .hero{padding:0 0 28px;position:relative;overflow:hidden}
+ .hero .wrap{width:100%;}
+ .hero-grid{display:block;position:relative;min-height:690px;padding:54px 5% 40px;isolation:isolate}
+ .hero-grid:before{content:"";position:absolute;inset:0;z-index:-2;background:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=90") center/cover no-repeat}
+ .hero-grid:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,7,6,.42) 0%,rgba(8,7,6,.58) 30%,rgba(8,7,6,.86) 74%,#0d0c0b 100%)}
+ .hero-grid>div:first-child{max-width:100%;padding-top:10px}
+ .hero .eyebrow{font-size:.68rem;letter-spacing:.18em;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+ .hero h1{font-size:clamp(3.1rem,14vw,4.25rem);line-height:.98;max-width:650px;text-shadow:0 3px 20px rgba(0,0,0,.42)}
+ .hero p{font-size:1rem;color:#ddd5cd;max-width:95%;margin:20px 0 26px;text-shadow:0 2px 12px rgba(0,0,0,.45)}
+ .hero .actions{gap:10px}.hero .actions .btn{width:100%;backdrop-filter:blur(4px)}
+ .hero .ghost{background:rgba(14,12,10,.46);border-color:rgba(255,255,255,.18)}
+ .hero .proof{margin-top:26px;gap:16px 28px}.hero .proof span{color:#c8beb4}.hero .proof strong{font-size:.95rem}
+ .hero-media{display:none}
+
+ /* Mobile hero entrance animation */
+ .hero .eyebrow,
+ .hero h1,
+ .hero p,
+ .hero .actions,
+ .hero .proof{opacity:0;transform:translateY(18px);animation:heroRise .72s cubic-bezier(.22,.61,.36,1) forwards;will-change:transform,opacity}
+ .hero .eyebrow{animation-delay:.08s}
+ .hero h1{animation-delay:.20s}
+ .hero p{animation-delay:.34s}
+ .hero .actions{animation-delay:.48s}
+ .hero .proof{animation-delay:.62s}
+ @keyframes heroRise{to{opacity:1;transform:translateY(0)}}
+ @media (prefers-reduced-motion:reduce){
+  .hero .eyebrow,.hero h1,.hero p,.hero .actions,.hero .proof{opacity:1;transform:none;animation:none}
+ }
+ section{padding:64px 0}.section-head{display:block}.section-head p{margin-top:14px}
+ .services,.process{grid-template-columns:1fr}.service{min-height:auto}
+ .gallery{grid-template-columns:1fr;grid-template-rows:290px 210px 210px 210px 210px}.gallery .big{grid-column:auto}
+ .statement,.cta{padding:32px 21px;border-radius:23px}.ticks{grid-template-columns:1fr}
+ .mobilebar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;bottom:0;left:0;right:0;z-index:80;padding:10px 12px;background:rgba(13,12,11,.95);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+ footer{padding-bottom:120px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+   <a class="logo" href="#top"><img src="spaceaura-logo.svg" alt="SpaceAura"></a>
+   <nav class="navlinks">
+     <a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a>
+   </nav>
+   <a class="btn primary" href="#contact">Free Consultation</a>
+   <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
+   <div class="mobile-menu" id="mobileMenu">
+     <a href="#services">Services</a>
+     <a href="#work">Work</a>
+     <a href="#process">Process</a>
+     <a href="#contact">Contact</a>
+     <a class="mobile-cta" href="#contact">Free Consultation</a>
+   </div>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <div class="eyebrow">Premium Interior Design • Across India</div>
+   <h1>Spaces that feel calm, refined and truly yours.</h1>
+   <p>SpaceAura creates elegant, functional interiors for modern Indian homes — from complete home interiors to modular kitchens, wardrobes and renovation.</p>
+   <div class="actions">
+    <a class="btn primary" href="#contact">Start Your Project</a>
+    <a class="btn ghost" href="#work">View Our Work</a>
+   </div>
+   <div class="proof">
+    <div><strong>End-to-End</strong><span>Design to execution</span></div>
+    <div><strong>Personalised</strong><span>Built around your lifestyle</span></div>
+    <div><strong>Pan India</strong><span>Interior services across India</span></div>
+   </div>
+  </div>
+  <div class="hero-media"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=88" alt="Premium living room interior"></div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">What we do</div><h2>Complete interior solutions.</h2></div><p>One refined design language, tailored to your home, lifestyle and practical needs.</p></div>
+  <div class="services">
+   <article class="service"><div><b>01</b><h3>Full Home Interiors</h3></div><p>Complete planning, styling and execution for new homes and full-home transformations.</p></article>
+   <article class="service"><div><b>02</b><h3>Modular Kitchen</h3></div><p>Elegant, ergonomic kitchens with functional storage and premium contemporary finishes.</p></article>
+   <article class="service"><div><b>03</b><h3>Wardrobes & Storage</h3></div><p>Custom wardrobes and intelligent storage that make every inch work beautifully.</p></article>
+   <article class="service"><div><b>04</b><h3>Renovation</h3></div><p>Thoughtful upgrades for layouts, finishes, lighting, furniture and complete room refreshes.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="work">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Portfolio mood</div><h2>Warm materials. Clean lines. Calm spaces.</h2></div><p>A premium visual direction where proportion, material and light do the talking.</p></div>
+  <div class="gallery">
+   <figure class="big"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=88" alt="Living room"></figure>
+   <figure><img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=900&q=88" alt="Kitchen"></figure>
+   <figure><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=88" alt="Bedroom"></figure>
+   <figure><img src="https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?auto=format&fit=crop&w=900&q=88" alt="Wardrobe"></figure>
+   <figure><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=88" alt="Modern interior"></figure>
+  </div>
+ </div>
+</section>
+
+<section id="process">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Our process</div><h2>Simple from first call to handover.</h2></div><p>A clear process keeps your project easy to understand and easier to manage.</p></div>
+  <div class="process">
+   <div class="step"><b>01</b><h3>Consultation</h3><p>We understand your space, needs, taste and budget.</p></div>
+   <div class="step"><b>02</b><h3>Design Direction</h3><p>Layouts, materials and visual direction are planned clearly.</p></div>
+   <div class="step"><b>03</b><h3>Execution</h3><p>Work is coordinated with quality and progress checks.</p></div>
+   <div class="step"><b>04</b><h3>Handover</h3><p>Final finishing and walkthrough before delivery.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap statement">
+  <div><div class="eyebrow">The SpaceAura approach</div><h2>Luxury that doesn't feel loud.</h2><p>Balanced layouts, warm materials and thoughtful details help your home feel premium, peaceful and easy to live in.</p></div>
+  <div class="ticks">
+   <div class="tick">✓ Personalised concepts</div><div class="tick">✓ Practical space planning</div>
+   <div class="tick">✓ Material guidance</div><div class="tick">✓ End-to-end support</div>
+   <div class="tick">✓ Clear communication</div><div class="tick">✓ Mobile-first enquiry</div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap cta">
+  <div class="eyebrow">Start your project</div>
+  <h2>Your space can feel completely different.</h2>
+  <p>Tell us your city, property type and requirement. We’ll help you choose the right interior solution for your home.</p>
+  <a class="btn primary" href="#contact">Get Free Consultation</a>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap contact">
+  <div>
+   <div class="eyebrow">Free consultation</div><h2>Let's design your space.</h2>
+   <p>Share your city, requirement and project details. The form opens WhatsApp with your enquiry pre-filled.</p>
+   <p><strong>Serving:</strong> Full Home Interiors, Modular Kitchens, Wardrobes, Renovation and Room Transformations.</p>
+  </div>
+  <form class="form" onsubmit="sendLead(event)">
+   <div class="field"><label>Your Name</label><input id="name" required placeholder="Enter your name"></div>
+   <div class="field"><label>Mobile Number</label><input id="phone" required inputmode="tel" placeholder="10-digit mobile number"></div>
+   <div class="field"><label>City / Location</label><input id="city" required placeholder="Your city"></div>
+   <div class="field"><label>Requirement</label><select id="service"><option>Full Home Interiors</option><option>Modular Kitchen</option><option>Wardrobes & Storage</option><option>Renovation</option><option>Other Interior Work</option></select></div>
+   <div class="field"><label>Project Details</label><textarea id="message" placeholder="2BHK / 3BHK, approximate timeline, etc."></textarea></div>
+   <button class="btn primary" style="width:100%" type="submit">Send Enquiry on WhatsApp</button>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap footer">
+  <div><strong>SpaceAura</strong> — Beautiful Spaces. Better Living.</div>
+  <div>Hyderabad, India | Interior Design Services Across India</div>
+  <div>© 2026 SpaceAura. All rights reserved.</div>
+ </div>
+</footer>
+
+<div class="mobilebar">
+ <a class="btn ghost" href="tel:+919999999999">Call Now</a>
+ <a class="btn primary" href="https://wa.me/919999999999" target="_blank">WhatsApp</a>
+</div>
+
+<script>
+const menuToggle=document.querySelector('.menu-toggle');
+const mobileMenu=document.getElementById('mobileMenu');
+menuToggle?.addEventListener('click',()=>{
+ const isOpen=mobileMenu.classList.toggle('open');
+ menuToggle.classList.toggle('active',isOpen);
+ menuToggle.setAttribute('aria-expanded',String(isOpen));
+ menuToggle.setAttribute('aria-label',isOpen?'Close menu':'Open menu');
+});
+mobileMenu?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+ mobileMenu.classList.remove('open');
+ menuToggle.classList.remove('active');
+ menuToggle.setAttribute('aria-expanded','false');
+ menuToggle.setAttribute('aria-label','Open menu');
+}));
+document.addEventListener('click',(e)=>{
+ if(mobileMenu?.classList.contains('open') && !e.target.closest('.nav')){
+  mobileMenu.classList.remove('open');
+  menuToggle.classList.remove('active');
+  menuToggle.setAttribute('aria-expanded','false');
+  menuToggle.setAttribute('aria-label','Open menu');
+ }
+});
+
+const WHATSAPP_NUMBER="919999999999"; // REPLACE with real number
+function sendLead(e){
+ e.preventDefault();
+ const msg=`Hi SpaceAura, I want an interior consultation.
+
+Name: ${document.getElementById('name').value}
+Mobile: ${document.getElementById('phone').value}
+City: ${document.getElementById('city').value}
+Requirement: ${document.getElementById('service').value}
+Details: ${document.getElementById('message').value || 'Not provided'}`;
+ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank');
+}
+</script>
+</body>
+</html>
